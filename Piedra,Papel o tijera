@@ -1,0 +1,38 @@
+import random
+
+elejir = ['piedra', 'papel', 'tijera']
+
+while True:
+    jugador = None
+    computadora = random.choice(elejir)
+
+    while jugador not in elejir:
+        jugador = input('piedra, papel o tijera?: ').lower()
+
+    print('Computadora:', computadora)
+    print('Jugador:', jugador)
+
+    if jugador == computadora:
+        print('Empate!')
+    elif jugador == 'piedra':
+        if computadora == 'tijera':
+            print('Ganaste!')
+        else:
+            print('Perdiste!')
+    elif jugador == 'papel':
+        if computadora == 'piedra':
+            print('Ganaste!')
+        else:
+            print('Perdiste!')
+    elif jugador == 'tijera':
+        if computadora == 'papel':
+            print('Ganaste!')
+        else:
+            print('Perdiste!')
+
+    jugar_de_nuevo = input('Jugar otra vez?? (si/no): ').lower()
+
+    if jugar_de_nuevo != 'si':
+        break
+
+print('Adios!')
